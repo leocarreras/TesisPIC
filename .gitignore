@@ -18,6 +18,8 @@ $RECYCLE.BIN/
 *.hex
 *.o
 *.d
+*.elf
+*.map
 
 # =========================
 # Operating System Files

@@ -1,0 +1,93 @@
+#include "timerconfig.h"
+#include <p33FJ64MC802.h>
+#include <timer.h>
+#include "globaldefinitions.h"
+#include "pwmconfig.h"
+#include "qeiconfig.h"
+#include "uartconfig.h"
+
+
+#define a 0.3501
+#define b -(0.7002+4391.0*Tm1)
+#define c 0.3501+4391.0*Tm1+5509000.0*Tm1*Tm1 
+
+#define kp 100
+#define ki 0
+#define kd 50
+
+#define k1 kp+ki+kd
+#define k2 -kp-2*kd
+#define k3 kd
+
+#define finconteo 2500
+
+static double e=0,e1=0,e2=0,u=0,u1=0, y=0;
+
+static int aux[finconteo];
+
+static char str[100];
+
+static int markfin=0, i=0;
+
+ void _ISR __attribute__((auto_psv))_T1Interrupt(void)
+{
+	
+	//puts_uart("a");
+	y=(double)Int32QEI1();
+	
+	/* Escalado de la entrada del encoder */
+	y=y/pulsosporvuelta*50.0/17.0*40.0*360.0*2.0;	
+	
+	/*if(i<finconteo){
+		aux[i]=(int)(y*10);
+		i++;
+	}*/
+	/* Calculo error actual */
+	e=ref*50.0/17.0*50.0/17.0*40.0*4.0-y;
+
+        /* Imprimir posicion final */
+       /* if ((i==finconteo)&&(markfin==0))	
+        {	
+			SetDutyPWM1(50);
+			for(i=0;i<finconteo;i=i+20){
+            sprintf(str, "%i,",aux[i]);
+            puts_uart(str);
+			}
+			markfin=1;
+        }*/
+	
+	/* Calculo esfuerzo de control actual */
+	//u=a*e2+b*e1+c*e+u1;
+	u=u1+k1*e+k2*e1+k3*e2;
+	/* Actualizar variables */
+	u1=u;
+	e2=e1;
+	e1=e;
+
+	/* Asignar salida */
+		//if (2*42-y>0) SetDutyPWM1(100);
+		//if (-2*376-y<0) SetDutyPWM1(00);
+		//if (e>0) SetDutyPWM1(100);
+		//if (e<0) SetDutyPWM1(00);
+		//else SetDutyPWM1(50);
+
+	/*if (e<-10) SetDutyPWM1(00);
+	else {
+		if (e>10) SetDutyPWM1(100);
+		else SetDutyPWM1(50);
+	}*/
+	SetDutyPWM1((unsigned int)u+50);
+	/* Reiniciar conteo y bandera de interrupcion */
+    WriteTimer1(0);
+    IFS0bits.T1IF = 0; //Clear Timer1 interrupt flag
+}
+
+ void Timer1Config(){
+        /* Enable Timer1 Interrupt and Priority to "1" */
+    ConfigIntTimer1(T1_INT_PRIOR_1 & T1_INT_ON);
+    WriteTimer1(0);
+
+    OpenTimer1(T1_ON & T1_GATE_OFF & T1_IDLE_STOP &
+               T1_PS_1_64 & T1_SYNC_EXT_OFF &
+               T1_SOURCE_INT, time1);
+ }

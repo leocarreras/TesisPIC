@@ -54,7 +54,7 @@ static int markfin=0, i=0, c=0;
 
 	/*if((e_k - e_km1)*(e_k - e_km1)<= 25)
 		e_k = 0;*/
-	
+	habilitarAcimut++;
 	if(habilitarAcimut<1000){
 	    /*Termino Proporcional*/
 		aup = akp*ae_k;    

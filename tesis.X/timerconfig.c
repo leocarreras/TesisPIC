@@ -25,6 +25,8 @@ double eup=0,eui=0, eui_km1=0, eud=0,eu_km1=0,eu_pid=0;
 
 static int aux[finconteo];
 
+static int habilitarAcimut=0;
+
 char str3[30];
 double refaz=0.0,refel=0.0, refazraw=0.0,refelraw=0.0;
 int r=0;
@@ -53,41 +55,45 @@ static int markfin=0, i=0, c=0;
 	/*if((e_k - e_km1)*(e_k - e_km1)<= 25)
 		e_k = 0;*/
 	
-
-    /*Termino Proporcional*/
-	aup = akp*ae_k;    
-
-	/*if(up >= 50)
-		up = 50;
-
-	if(up <= -50)
-		up = -50;*/
-
-	/*Termino Integral*/
-	aui = aui_km1 + ae_km1*Tm1*aki/1000; 
+	if(habilitarAcimut<1000){
+	    /*Termino Proporcional*/
+		aup = akp*ae_k;    
 	
-	if(aui >= 20)
-		aui = 20;
-
-	if(aui <= -20)
-		aui = -20;
+		/*if(up >= 50)
+			up = 50;
 	
-	/*Termino Derivativo*/
-	aud = akd*(ae_k-ae_km1)/Tm1/1000;
+		if(up <= -50)
+			up = -50;*/
 	
-	/*if(ud >= 50)
-		ud = 50; 
-
-	if(ud <= -50)
-		ud = -50;*/
-
-	au_pid = aup + aui + aud;    
+		/*Termino Integral*/
+		aui = aui_km1 + ae_km1*Tm1*aki/1000; 
+		
+		if(aui >= 20)
+			aui = 20;
 	
- 	/* Actualizar variables */
-	aui_km1 = aui;
-	ae_km1 = ae_k;
+		if(aui <= -20)
+			aui = -20;
+		
+		/*Termino Derivativo*/
+		aud = akd*(ae_k-ae_km1)/Tm1/1000;
+		
+		/*if(ud >= 50)
+			ud = 50; 
 	
-	SetDutyPWM1(au_pid);
+		if(ud <= -50)
+			ud = -50;*/
+	
+		au_pid = aup + aui + aud;    
+		
+	 	/* Actualizar variables */
+		aui_km1 = aui;
+		ae_km1 = ae_k;
+		
+		SetDutyPWM1(au_pid);
+	else{
+		if(habilitarAcimut==3000) habilitarAcimut=0;
+		else SetDutyPWM1(0);
+	}
 
 	/******************* MOTOR 2 ***************/
 

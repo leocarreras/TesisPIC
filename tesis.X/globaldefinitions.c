@@ -35,7 +35,7 @@ void PortConfig()
 {
 	AD1PCFGL = 0xFFFC;	// PORTA<1:0> analog, others digital (reset state=analog)
     LATA = 0;
-    TRISA = 0x0F;	// set PORTA<4:0> = ---0 1111 = 0x0F RA4:SPIN1
+    TRISA = 0x00;	// set PORTA<4:0> = ---0 1111 = 0x0F RA4:SPIN1
     LATB = 0;		// RB15:EN1, EB13:EN2, RB6:SPIN2, RB5:LED2, RB4:LED1, RB3:TX, RB2:RX
     TRISB = 0x0F87;	// PORTB<15:0> = 0000 1111 1000 0111 = 0x8F87
 }

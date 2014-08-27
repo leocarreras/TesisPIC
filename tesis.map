@@ -1,4 +1,4 @@
-Microchip Technology Inc, vv3_31 (A) 8
+Microchip Technology Inc, vv3_31 (A) }
 
 Tool Name:
   c:\program files\microchip\mplab c30\bin\bin\..\bin/pic30-coff-ld.exe
@@ -198,27 +198,27 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200              0x23a8          0x357c  (13692)
 .const                      0x25a8                0x36            0x51  (81)
-.text                       0x25de               0x2aa           0x3ff  (1023)
-.dinit                      0x2888               0x20c           0x312  (786)
-.text                       0x2a94               0x374           0x52e  (1326)
+.text                       0x25de               0x362           0x513  (1299)
+.dinit                      0x2940               0x210           0x318  (792)
+.text                       0x2b50               0x38c           0x552  (1362)
 
-                     Total program memory used (bytes):         0x420c  (16908) 12%
+                     Total program memory used (bytes):         0x434a  (17226) 13%
 
 
 Data Memory  [Origin = 0x800, Length = 0x4000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0          0x1474  (5236)
-.ndata                      0x1c74                   0            0x5a  (90)
-.nbss                       0x1cce                   0            0x10  (16)
-.ndata                      0x1cde                   0             0x2  (2)
-.data                       0x1ce0                   0           0x226  (550)
-.dconst                     0x1f06                   0            0x18  (24)
-.bss                        0x1f1e                   0             0xa  (10)
-.data                       0x1f28                   0             0x2  (2)
+.nbss                        0x800                   0          0x1476  (5238)
+.ndata                      0x1c76                   0            0x5e  (94)
+.nbss                       0x1cd4                   0            0x10  (16)
+.ndata                      0x1ce4                   0             0x2  (2)
+.data                       0x1ce6                   0           0x226  (550)
+.dconst                     0x1f0c                   0            0x18  (24)
+.bss                        0x1f24                   0             0xa  (10)
+.data                       0x1f2e                   0             0x2  (2)
 
-                        Total data memory used (bytes):         0x172a  (5930) 36%
+                        Total data memory used (bytes):         0x1730  (5936) 36%
 
 
 Dynamic Memory Usage
@@ -226,96 +226,98 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1f2a                              0x28d6  (10454)
+stack                       0x1f30                              0x28d0  (10448)
 
-                        Maximum dynamic memory (bytes):         0x28d6  (10454)
+                        Maximum dynamic memory (bytes):         0x28d0  (10448)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x1b8e                  _str3
-                    0x1bac                  _lecturaARM
-                    0x1c10                  _escrituraARM
-                    0x1c74                  _ae_k
-                    0x1c78                  _ae_km1
-                    0x1c7c                  _ay
-                    0x1c80                  _aup
-                    0x1c84                  _aui
-                    0x1c88                  _aui_km1
-                    0x1c8c                  _aud
-                    0x1c90                  _au_km1
-                    0x1c94                  _au_pid
-                    0x1c98                  _ee_k
-                    0x1c9c                  _ee_km1
-                    0x1ca0                  _ey
-                    0x1ca4                  _eup
-                    0x1ca8                  _eui
-                    0x1cac                  _eui_km1
-                    0x1cb0                  _eud
-                    0x1cb4                  _eu_km1
-                    0x1cb8                  _eu_pid
-                    0x1cbc                  _refaz
-                    0x1cc0                  _refel
-                    0x1cc4                  _refazraw
-                    0x1cc8                  _refelraw
-                    0x1ccc                  _r
-                    0x1cce                  _pos_high1
-                    0x1cd2                  _pos_low1
-                    0x1cd6                  _pos_high2
-                    0x1cda                  _pos_low2
-                    0x1cde                  _k
-                    0x1ce0                  __npowers_
-                    0x1d90                  __powers_
-                    0x1ee0                  __Files
-                    0x1ee2                  __iob
-                    0x1f1e                  __sobuf
-                    0x1f20                  __sibuf
-                    0x1f22                  __outdone
-                    0x1f26                  _errno
-                    0x1f28                  ___C30_UART
+                    0x1b90                  _str3
+                    0x1bae                  _lecturaARM
+                    0x1c12                  _escrituraARM
+                    0x1c76                  _ae_k
+                    0x1c7a                  _ae_km1
+                    0x1c7e                  _ay
+                    0x1c82                  _aup
+                    0x1c86                  _aui
+                    0x1c8a                  _aui_km1
+                    0x1c8e                  _aud
+                    0x1c92                  _au_km1
+                    0x1c96                  _au_pid
+                    0x1c9a                  _au_pida
+                    0x1c9e                  _ee_k
+                    0x1ca2                  _ee_km1
+                    0x1ca6                  _ey
+                    0x1caa                  _eup
+                    0x1cae                  _eui
+                    0x1cb2                  _eui_km1
+                    0x1cb6                  _eud
+                    0x1cba                  _eu_km1
+                    0x1cbe                  _eu_pid
+                    0x1cc2                  _refaz
+                    0x1cc6                  _refel
+                    0x1cca                  _refazraw
+                    0x1cce                  _refelraw
+                    0x1cd2                  _r
+                    0x1cd4                  _pos_high1
+                    0x1cd8                  _pos_low1
+                    0x1cdc                  _pos_high2
+                    0x1ce0                  _pos_low2
+                    0x1ce4                  _k
+                    0x1ce6                  __npowers_
+                    0x1d96                  __powers_
+                    0x1ee6                  __Files
+                    0x1ee8                  __iob
+                    0x1f24                  __sobuf
+                    0x1f26                  __sibuf
+                    0x1f28                  __outdone
+                    0x1f2c                  _errno
+                    0x1f2e                  ___C30_UART
 
 External Symbols in Data Memory (by name):
 
-                    0x1ee0                  __Files
-                    0x1f28                  ___C30_UART
-                    0x1ee2                  __iob
-                    0x1ce0                  __npowers_
-                    0x1f22                  __outdone
-                    0x1d90                  __powers_
-                    0x1f20                  __sibuf
-                    0x1f1e                  __sobuf
-                    0x1c74                  _ae_k
-                    0x1c78                  _ae_km1
-                    0x1c90                  _au_km1
-                    0x1c94                  _au_pid
-                    0x1c8c                  _aud
-                    0x1c84                  _aui
-                    0x1c88                  _aui_km1
-                    0x1c80                  _aup
-                    0x1c7c                  _ay
-                    0x1c98                  _ee_k
-                    0x1c9c                  _ee_km1
-                    0x1f26                  _errno
-                    0x1c10                  _escrituraARM
-                    0x1cb4                  _eu_km1
-                    0x1cb8                  _eu_pid
-                    0x1cb0                  _eud
-                    0x1ca8                  _eui
-                    0x1cac                  _eui_km1
-                    0x1ca4                  _eup
-                    0x1ca0                  _ey
-                    0x1cde                  _k
-                    0x1bac                  _lecturaARM
-                    0x1cce                  _pos_high1
-                    0x1cd6                  _pos_high2
-                    0x1cd2                  _pos_low1
-                    0x1cda                  _pos_low2
-                    0x1ccc                  _r
-                    0x1cbc                  _refaz
-                    0x1cc4                  _refazraw
-                    0x1cc0                  _refel
-                    0x1cc8                  _refelraw
-                    0x1b8e                  _str3
+                    0x1ee6                  __Files
+                    0x1f2e                  ___C30_UART
+                    0x1ee8                  __iob
+                    0x1ce6                  __npowers_
+                    0x1f28                  __outdone
+                    0x1d96                  __powers_
+                    0x1f26                  __sibuf
+                    0x1f24                  __sobuf
+                    0x1c76                  _ae_k
+                    0x1c7a                  _ae_km1
+                    0x1c92                  _au_km1
+                    0x1c96                  _au_pid
+                    0x1c9a                  _au_pida
+                    0x1c8e                  _aud
+                    0x1c86                  _aui
+                    0x1c8a                  _aui_km1
+                    0x1c82                  _aup
+                    0x1c7e                  _ay
+                    0x1c9e                  _ee_k
+                    0x1ca2                  _ee_km1
+                    0x1f2c                  _errno
+                    0x1c12                  _escrituraARM
+                    0x1cba                  _eu_km1
+                    0x1cbe                  _eu_pid
+                    0x1cb6                  _eud
+                    0x1cae                  _eui
+                    0x1cb2                  _eui_km1
+                    0x1caa                  _eup
+                    0x1ca6                  _ey
+                    0x1ce4                  _k
+                    0x1bae                  _lecturaARM
+                    0x1cd4                  _pos_high1
+                    0x1cdc                  _pos_high2
+                    0x1cd8                  _pos_low1
+                    0x1ce0                  _pos_low2
+                    0x1cd2                  _r
+                    0x1cc2                  _refaz
+                    0x1cca                  _refazraw
+                    0x1cc6                  _refel
+                    0x1cce                  _refelraw
+                    0x1b90                  _str3
 
 External Symbols in Program Memory (by address):
 
@@ -329,12 +331,12 @@ External Symbols in Program Memory (by address):
                   0x0002ae                  _isalpha
                   0x0002c2                  _isspace
                   0x0003b2                  ___mulp32peds3
-                  0x0003b2                  ___mulsi3
                   0x0003b2                  ___mulp32eds3
+                  0x0003b2                  ___mulsi3
                   0x0003be                  ___gtsf2
                   0x0003be                  ___gesf2
-                  0x0003c2                  ___ltsf2
                   0x0003c2                  ___eqsf2
+                  0x0003c2                  ___ltsf2
                   0x0003c2                  ___lesf2
                   0x0003c6                  ___fixsfsi
                   0x000408                  ___divsi3
@@ -353,14 +355,14 @@ External Symbols in Program Memory (by address):
                   0x00071a                  __fbopReturnNaN
                   0x000720                  ___muldf3
                   0x00080a                  ___extendsfdf2
+                  0x000848                  ___eqdf2
                   0x000848                  ___ledf2
                   0x000848                  ___ltdf2
-                  0x000848                  ___eqdf2
                   0x000852                  ___nedf2
                   0x00085c                  ___truncdfsf2
                   0x0008b2                  _frexpf
-                  0x0008b8                  ___gtdf2
                   0x0008b8                  ___gedf2
+                  0x0008b8                  ___gtdf2
                   0x0008c2                  ___adddf3
                   0x0009bc                  ___fixunsdfdi
                   0x000a1e                  ___divdf3
@@ -410,57 +412,61 @@ External Symbols in Program Memory (by address):
                   0x002432                  __filbuf
                   0x002554                  _fflush
                   0x0025de                  __T1Interrupt
-                  0x002788                  _Timer1Config
-                  0x00279c                  _LeerReferencia
-                  0x002a94                  _InitMCindependentPWM
-                  0x002ada                  _SetDutyPWM1
-                  0x002b34                  _SetDutyPWM2
-                  0x002b8e                  _QEIConfig
-                  0x002bc6                  __QEI1Interrupt
-                  0x002bfc                  __QEI2Interrupt
-                  0x002c32                  _Int32QEI1
-                  0x002c50                  _Int32QEI2
-                  0x002c6e                  _InitClock
-                  0x002cb4                  _PortRemapping
-                  0x002d02                  _PortConfig
-                  0x002d1c                  _delay
-                  0x002d36                  _UART1Config
-                  0x002d48                  _CRLF
-                  0x002d62                  _gets_uart
-                  0x002dac                  _puts_uart
-                  0x002dc0                  _main
+                  0x002870                  _Timer1Config
+                  0x002884                  _LeerReferencia
+                  0x002b50                  _InitMCindependentPWM
+                  0x002b96                  _SetDutyPWM1
+                  0x002be6                  _SetDutyPWM2
+                  0x002c60                  _SetAzSpin
+                  0x002c7a                  _SetElSpin
+                  0x002c94                  _QEIConfig
+                  0x002ccc                  __QEI1Interrupt
+                  0x002d02                  __QEI2Interrupt
+                  0x002d38                  _Int32QEI1
+                  0x002d56                  _Int32QEI2
+                  0x002d74                  _InitClock
+                  0x002dba                  _PortRemapping
+                  0x002e08                  _PortConfig
+                  0x002e22                  _delay
+                  0x002e3c                  _UART1Config
+                  0x002e4e                  _CRLF
+                  0x002e68                  _gets_uart
+                  0x002eb2                  _puts_uart
+                  0x002ec6                  _main
 
 External Symbols in Program Memory (by name):
 
                   0x000fc0                  _BusyUART1
-                  0x002d48                  _CRLF
+                  0x002e4e                  _CRLF
                   0x000f20                  _ConfigIntQEI1
                   0x000f48                  _ConfigIntQEI2
                   0x000f7e                  _ConfigIntTimer1
                   0x000fc8                  _DataRdyUART1
-                  0x002c6e                  _InitClock
-                  0x002a94                  _InitMCindependentPWM
-                  0x002c32                  _Int32QEI1
-                  0x002c50                  _Int32QEI2
-                  0x00279c                  _LeerReferencia
+                  0x002d74                  _InitClock
+                  0x002b50                  _InitMCindependentPWM
+                  0x002d38                  _Int32QEI1
+                  0x002d56                  _Int32QEI2
+                  0x002884                  _LeerReferencia
                   0x000ee4                  _OpenQEI1
                   0x000f02                  _OpenQEI2
                   0x000fa8                  _OpenTimer1
-                  0x002d02                  _PortConfig
-                  0x002cb4                  _PortRemapping
-                  0x002b8e                  _QEIConfig
+                  0x002e08                  _PortConfig
+                  0x002dba                  _PortRemapping
+                  0x002c94                  _QEIConfig
                   0x000f72                  _ReadQEI1
                   0x000f76                  _ReadQEI2
                   0x000fce                  _ReadUART1
-                  0x002ada                  _SetDutyPWM1
-                  0x002b34                  _SetDutyPWM2
-                  0x002788                  _Timer1Config
-                  0x002d36                  _UART1Config
+                  0x002c60                  _SetAzSpin
+                  0x002b96                  _SetDutyPWM1
+                  0x002be6                  _SetDutyPWM2
+                  0x002c7a                  _SetElSpin
+                  0x002870                  _Timer1Config
+                  0x002e3c                  _UART1Config
                   0x000f7a                  _WriteTimer1
                   0x000fb0                  _WriteUART1
                   0x000290                  __DefaultInterrupt
-                  0x002bc6                  __QEI1Interrupt
-                  0x002bfc                  __QEI2Interrupt
+                  0x002ccc                  __QEI1Interrupt
+                  0x002d02                  __QEI2Interrupt
                   0x0025de                  __T1Interrupt
                   0x0008c2                  ___adddf3
                   0x00047e                  ___addsf3
@@ -527,17 +533,17 @@ External Symbols in Program Memory (by name):
                   0x0010c2                  __vfscanf_fF
                   0x002090                  _atof
                   0x002094                  _atoi
-                  0x002d1c                  _delay
+                  0x002e22                  _delay
                   0x002554                  _fflush
                   0x001e0a                  _fgetc
                   0x0008b2                  _frexpf
-                  0x002d62                  _gets_uart
+                  0x002e68                  _gets_uart
                   0x0002ae                  _isalpha
                   0x0002c2                  _isspace
                   0x000294                  _isupper
-                  0x002dc0                  _main
+                  0x002ec6                  _main
                   0x000fe0                  _putsUART1
-                  0x002dac                  _puts_uart
+                  0x002eb2                  _puts_uart
                   0x00105e                  _strlen
                   0x001eac                  _strtod
                   0x0002a0                  _tolower
@@ -934,7 +940,7 @@ __FUID3
                   0x000082          0x4 LONG 0x290 DEFINED (__Interrupt55)?ABSOLUTE (__Interrupt55):ABSOLUTE (__DefaultInterrupt)
                   0x000084          0x4 LONG 0x290 DEFINED (__Interrupt56)?ABSOLUTE (__Interrupt56):ABSOLUTE (__DefaultInterrupt)
                   0x000086          0x4 LONG 0x290 DEFINED (__MPWM1Interrupt)?ABSOLUTE (__MPWM1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000088          0x4 LONG 0x2bc6 DEFINED (__QEI1Interrupt)?ABSOLUTE (__QEI1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000088          0x4 LONG 0x2ccc DEFINED (__QEI1Interrupt)?ABSOLUTE (__QEI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00008a          0x4 LONG 0x290 DEFINED (__Interrupt59)?ABSOLUTE (__Interrupt59):ABSOLUTE (__DefaultInterrupt)
                   0x00008c          0x4 LONG 0x290 DEFINED (__Interrupt60)?ABSOLUTE (__Interrupt60):ABSOLUTE (__DefaultInterrupt)
                   0x00008e          0x4 LONG 0x290 DEFINED (__DMA5Interrupt)?ABSOLUTE (__DMA5Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -951,7 +957,7 @@ __FUID3
                   0x0000a4          0x4 LONG 0x290 DEFINED (__Interrupt72)?ABSOLUTE (__Interrupt72):ABSOLUTE (__DefaultInterrupt)
                   0x0000a6          0x4 LONG 0x290 DEFINED (__MPWM2Interrupt)?ABSOLUTE (__MPWM2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000a8          0x4 LONG 0x290 DEFINED (__FLTA2Interrupt)?ABSOLUTE (__FLTA2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0000aa          0x4 LONG 0x2bfc DEFINED (__QEI2Interrupt)?ABSOLUTE (__QEI2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0000aa          0x4 LONG 0x2d02 DEFINED (__QEI2Interrupt)?ABSOLUTE (__QEI2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0000ac          0x4 LONG 0x290 DEFINED (__Interrupt76)?ABSOLUTE (__Interrupt76):ABSOLUTE (__DefaultInterrupt)
                   0x0000ae          0x4 LONG 0x290 DEFINED (__Interrupt77)?ABSOLUTE (__Interrupt77):ABSOLUTE (__DefaultInterrupt)
                   0x0000b0          0x4 LONG 0x290 DEFINED (__DAC1RInterrupt)?ABSOLUTE (__DAC1RInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1062,7 +1068,7 @@ __FUID3
                   0x000182          0x4 LONG 0x290 DEFINED (__AltInterrupt55)?ABSOLUTE (__AltInterrupt55):DEFINED (__Interrupt55)?ABSOLUTE (__Interrupt55):ABSOLUTE (__DefaultInterrupt)
                   0x000184          0x4 LONG 0x290 DEFINED (__AltInterrupt56)?ABSOLUTE (__AltInterrupt56):DEFINED (__Interrupt56)?ABSOLUTE (__Interrupt56):ABSOLUTE (__DefaultInterrupt)
                   0x000186          0x4 LONG 0x290 DEFINED (__AltMPWM1Interrupt)?ABSOLUTE (__AltMPWM1Interrupt):DEFINED (__MPWM1Interrupt)?ABSOLUTE (__MPWM1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000188          0x4 LONG 0x2bc6 DEFINED (__AltQEI1Interrupt)?ABSOLUTE (__AltQEI1Interrupt):DEFINED (__QEI1Interrupt)?ABSOLUTE (__QEI1Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000188          0x4 LONG 0x2ccc DEFINED (__AltQEI1Interrupt)?ABSOLUTE (__AltQEI1Interrupt):DEFINED (__QEI1Interrupt)?ABSOLUTE (__QEI1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00018a          0x4 LONG 0x290 DEFINED (__AltInterrupt59)?ABSOLUTE (__AltInterrupt59):DEFINED (__Interrupt59)?ABSOLUTE (__Interrupt59):ABSOLUTE (__DefaultInterrupt)
                   0x00018c          0x4 LONG 0x290 DEFINED (__AltInterrupt60)?ABSOLUTE (__AltInterrupt60):DEFINED (__Interrupt60)?ABSOLUTE (__Interrupt60):ABSOLUTE (__DefaultInterrupt)
                   0x00018e          0x4 LONG 0x290 DEFINED (__AltDMA5Interrupt)?ABSOLUTE (__AltDMA5Interrupt):DEFINED (__DMA5Interrupt)?ABSOLUTE (__DMA5Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1079,7 +1085,7 @@ __FUID3
                   0x0001a4          0x4 LONG 0x290 DEFINED (__AltInterrupt72)?ABSOLUTE (__AltInterrupt72):DEFINED (__Interrupt72)?ABSOLUTE (__Interrupt72):ABSOLUTE (__DefaultInterrupt)
                   0x0001a6          0x4 LONG 0x290 DEFINED (__AltMPWM2Interrupt)?ABSOLUTE (__AltMPWM2Interrupt):DEFINED (__MPWM2Interrupt)?ABSOLUTE (__MPWM2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001a8          0x4 LONG 0x290 DEFINED (__AltFLTA2Interrupt)?ABSOLUTE (__AltFLTA2Interrupt):DEFINED (__FLTA2Interrupt)?ABSOLUTE (__FLTA2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x0001aa          0x4 LONG 0x2bfc DEFINED (__AltQEI2Interrupt)?ABSOLUTE (__AltQEI2Interrupt):DEFINED (__QEI2Interrupt)?ABSOLUTE (__QEI2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x0001aa          0x4 LONG 0x2d02 DEFINED (__AltQEI2Interrupt)?ABSOLUTE (__AltQEI2Interrupt):DEFINED (__QEI2Interrupt)?ABSOLUTE (__QEI2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x0001ac          0x4 LONG 0x290 DEFINED (__AltInterrupt76)?ABSOLUTE (__AltInterrupt76):DEFINED (__Interrupt76)?ABSOLUTE (__Interrupt76):ABSOLUTE (__DefaultInterrupt)
                   0x0001ae          0x4 LONG 0x290 DEFINED (__AltInterrupt77)?ABSOLUTE (__AltInterrupt77):DEFINED (__Interrupt77)?ABSOLUTE (__Interrupt77):ABSOLUTE (__DefaultInterrupt)
                   0x0001b0          0x4 LONG 0x290 DEFINED (__AltDAC1RInterrupt)?ABSOLUTE (__AltDAC1RInterrupt):DEFINED (__DAC1RInterrupt)?ABSOLUTE (__DAC1RInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -2371,106 +2377,109 @@ __c30_signature
  __c30_signature
                   0x0001ce          0x6 c:/program files/microchip/mplab c30/bin/bin/../../lib\libm-coff.a(dtype.o)
 
-.nbss               0x0800       0x1474
- .nbss              0x0800       0x1474 timerconfig.o
-                    0x1b8e                  str3
-                    0x1bac                  lecturaARM
-                    0x1c10                  escrituraARM
+.nbss               0x0800       0x1476
+ .nbss              0x0800       0x1476 timerconfig.o
+                    0x1b90                  str3
+                    0x1bae                  lecturaARM
+                    0x1c12                  escrituraARM
 
-.ndata              0x1c74         0x5a
- .ndata             0x1c74         0x5a timerconfig.o
-                    0x1c74                  ae_k
-                    0x1c78                  ae_km1
-                    0x1c7c                  ay
-                    0x1c80                  aup
-                    0x1c84                  aui
-                    0x1c88                  aui_km1
-                    0x1c8c                  aud
-                    0x1c90                  au_km1
-                    0x1c94                  au_pid
-                    0x1c98                  ee_k
-                    0x1c9c                  ee_km1
-                    0x1ca0                  ey
-                    0x1ca4                  eup
-                    0x1ca8                  eui
-                    0x1cac                  eui_km1
-                    0x1cb0                  eud
-                    0x1cb4                  eu_km1
-                    0x1cb8                  eu_pid
-                    0x1cbc                  refaz
-                    0x1cc0                  refel
-                    0x1cc4                  refazraw
-                    0x1cc8                  refelraw
-                    0x1ccc                  r
+.ndata              0x1c76         0x5e
+ .ndata             0x1c76         0x5e timerconfig.o
+                    0x1c76                  ae_k
+                    0x1c7a                  ae_km1
+                    0x1c7e                  ay
+                    0x1c82                  aup
+                    0x1c86                  aui
+                    0x1c8a                  aui_km1
+                    0x1c8e                  aud
+                    0x1c92                  au_km1
+                    0x1c96                  au_pid
+                    0x1c9a                  au_pida
+                    0x1c9e                  ee_k
+                    0x1ca2                  ee_km1
+                    0x1ca6                  ey
+                    0x1caa                  eup
+                    0x1cae                  eui
+                    0x1cb2                  eui_km1
+                    0x1cb6                  eud
+                    0x1cba                  eu_km1
+                    0x1cbe                  eu_pid
+                    0x1cc2                  refaz
+                    0x1cc6                  refel
+                    0x1cca                  refazraw
+                    0x1cce                  refelraw
+                    0x1cd2                  r
 
-.nbss               0x1cce         0x10
- .nbss              0x1cce         0x10 tesismain.o
-                    0x1cce                  pos_high1
-                    0x1cd2                  pos_low1
-                    0x1cd6                  pos_high2
-                    0x1cda                  pos_low2
+.nbss               0x1cd4         0x10
+ .nbss              0x1cd4         0x10 tesismain.o
+                    0x1cd4                  pos_high1
+                    0x1cd8                  pos_low1
+                    0x1cdc                  pos_high2
+                    0x1ce0                  pos_low2
 
-.ndata              0x1cde          0x2
- .ndata             0x1cde          0x2 tesismain.o
-                    0x1cde                  k
+.ndata              0x1ce4          0x2
+ .ndata             0x1ce4          0x2 tesismain.o
+                    0x1ce4                  k
 
-.data               0x1ce0        0x226
- .data              0x1ce0        0x160 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(powers.XXo)
-                    0x1ce0                  _npowers_
-                    0x1d90                  _powers_
- .data              0x1e40         0xa0 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(doprnt_fF.XXo)
- .data              0x1ee0         0x26 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(_iob.XXo)
-                    0x1ee0                  _Files
-                    0x1ee2                  _iob
+.data               0x1ce6        0x226
+ .data              0x1ce6        0x160 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(powers.XXo)
+                    0x1ce6                  _npowers_
+                    0x1d96                  _powers_
+ .data              0x1e46         0xa0 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(doprnt_fF.XXo)
+ .data              0x1ee6         0x26 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(_iob.XXo)
+                    0x1ee6                  _Files
+                    0x1ee8                  _iob
 
-.dconst             0x1f06         0x18
- .dconst            0x1f06         0x18 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(doprnt_fF.XXo)
+.dconst             0x1f0c         0x18
+ .dconst            0x1f0c         0x18 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(doprnt_fF.XXo)
 
-.bss                0x1f1e          0xa
- .bss               0x1f1e          0x6 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(_iob.XXo)
-                    0x1f1e                  _sobuf
-                    0x1f20                  _sibuf
-                    0x1f22                  _outdone
- .bss               0x1f24          0x2 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(doscan_fF.XXo)
- .bss               0x1f26          0x2 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(errno.XXo)
-                    0x1f26                  errno
+.bss                0x1f24          0xa
+ .bss               0x1f24          0x6 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(_iob.XXo)
+                    0x1f24                  _sobuf
+                    0x1f26                  _sibuf
+                    0x1f28                  _outdone
+ .bss               0x1f2a          0x2 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(doscan_fF.XXo)
+ .bss               0x1f2c          0x2 c:/program files/microchip/mplab c30/bin/bin/../../lib\libc-coff.a(errno.XXo)
+                    0x1f2c                  errno
 
-.data               0x1f28          0x2
- .data              0x1f28          0x2 c:/program files/microchip/mplab c30/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
-                    0x1f28                  __C30_UART
+.data               0x1f2e          0x2
+ .data              0x1f2e          0x2 c:/program files/microchip/mplab c30/bin/bin/../../lib\libpic30-coff.a(c30_uart.o)
+                    0x1f2e                  __C30_UART
 
 .const              0xa5a8         0x36 load address 0x0025a8  
  .const             0xa5a8         0x36 timerconfig.o
 
-.text             0x0025de        0x2aa
- .text            0x0025de        0x2aa timerconfig.o
+.text             0x0025de        0x362
+ .text            0x0025de        0x362 timerconfig.o
                   0x0025de                  _T1Interrupt
-                  0x002788                  Timer1Config
-                  0x00279c                  LeerReferencia
+                  0x002870                  Timer1Config
+                  0x002884                  LeerReferencia
 
-.dinit            0x002888        0x20c
- .dinit           0x002888        0x20c data_init
+.dinit            0x002940        0x210
+ .dinit           0x002940        0x210 data_init
 
-.text             0x002a94        0x374
- .text            0x002a94         0xfa pwmconfig.o
-                  0x002a94                  InitMCindependentPWM
-                  0x002ada                  SetDutyPWM1
-                  0x002b34                  SetDutyPWM2
- .text            0x002b8e         0xe0 qeiconfig.o
-                  0x002b8e                  QEIConfig
-                  0x002bc6                  _QEI1Interrupt
-                  0x002bfc                  _QEI2Interrupt
-                  0x002c32                  Int32QEI1
-                  0x002c50                  Int32QEI2
- .text            0x002c6e         0xc8 globaldefinitions.o
-                  0x002c6e                  InitClock
-                  0x002cb4                  PortRemapping
-                  0x002d02                  PortConfig
-                  0x002d1c                  delay
- .text            0x002d36         0x8a uartconfig.o
-                  0x002d36                  UART1Config
-                  0x002d48                  CRLF
-                  0x002d62                  gets_uart
-                  0x002dac                  puts_uart
- .text            0x002dc0         0x48 tesismain.o
-                  0x002dc0                  main
+.text             0x002b50        0x38c
+ .text            0x002b50        0x144 pwmconfig.o
+                  0x002b50                  InitMCindependentPWM
+                  0x002b96                  SetDutyPWM1
+                  0x002be6                  SetDutyPWM2
+                  0x002c60                  SetAzSpin
+                  0x002c7a                  SetElSpin
+ .text            0x002c94         0xe0 qeiconfig.o
+                  0x002c94                  QEIConfig
+                  0x002ccc                  _QEI1Interrupt
+                  0x002d02                  _QEI2Interrupt
+                  0x002d38                  Int32QEI1
+                  0x002d56                  Int32QEI2
+ .text            0x002d74         0xc8 globaldefinitions.o
+                  0x002d74                  InitClock
+                  0x002dba                  PortRemapping
+                  0x002e08                  PortConfig
+                  0x002e22                  delay
+ .text            0x002e3c         0x8a uartconfig.o
+                  0x002e3c                  UART1Config
+                  0x002e4e                  CRLF
+                  0x002e68                  gets_uart
+                  0x002eb2                  puts_uart
+ .text            0x002ec6         0x16 tesismain.o
+                  0x002ec6                  main

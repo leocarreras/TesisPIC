@@ -59,15 +59,47 @@ void InitMCindependentPWM()
 void SetDutyPWM1(double duty){
 	
 	if(duty>50) duty=50;
-	if(duty<-50) duty=-50; 
-	
-	P1DC1=periodo*((int)duty+50)/100;	
+	if(duty<0) duty=0; 
+	P1DC1=periodo*((int)duty)/100;	
 }
 
 void SetDutyPWM2(double duty){
+	
+	if(duty>100) duty=100;
+	if(duty<-100) duty=-100;
+	
+	if(duty>0) SetElSpin(0);
+	else SetElSpin(1);	
+ 
+	P1DC2=periodo*((int)abs(duty))/100;	
+}
+
+/*void SetDutyPWM2(double duty){
 	
 	if(duty>50) duty=50;
 	if(duty<-50) duty=-50; 
 	
 	P1DC2=periodo*((int)duty+50)/100;	
+}*/
+
+void SetAzSpin(int spin){
+	if(spin==0){
+		A1=1;
+		B1=0;
+	}
+	if(spin==1){
+		A1=0;
+		B1=1;
+	}
+}
+
+void SetElSpin(int spin){
+	if(spin==0){
+		A2=1;
+		B2=0;
+	}
+	if(spin==1){
+		A2=0;
+		B2=1;
+	}
 }

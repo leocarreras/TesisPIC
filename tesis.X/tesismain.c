@@ -51,13 +51,13 @@ int main(int argc, char** argv) {
     /* Initialize PWM */
     InitMCindependentPWM();
 
-    SetDutyPWM1(0);
+    /*SetDutyPWM1(0);
 
 	for(k=1;k<50;k++)
 		{
 		LATBbits.LATB15=~LATBbits.LATB15;
 		delay(200000);
-		}
+		}*/
 	
 	/* Initialize & Config QEI 1 & 2 */
 	QEIConfig();

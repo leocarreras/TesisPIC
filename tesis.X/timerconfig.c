@@ -7,18 +7,19 @@
 #include "uartconfig.h"
 
 
-#define akp 15//15//6
-#define aki 2
-#define akd 10
+#define akp 1//15//15//6
+#define aki 1
+#define akd 1000
 
-#define ekp 15//15//6
-#define eki 2
-#define ekd 10
+#define ekp 6//1//15//15//6
+#define eki 7
+#define ekd 3
 
 #define finconteo 2500
 
 double ae_k=0,ae_km1=0, ay=0;
 double aup=0,aui=0, aui_km1=0, aud=0,au_km1=0,au_pid=0;
+double au_pida=0;
 
 double ee_k=0,ee_km1=0, ey=0;
 double eup=0,eui=0, eui_km1=0, eud=0,eu_km1=0,eu_pid=0;
@@ -50,12 +51,13 @@ static int markfin=0, i=0, c=0;
 	//puts_uart(str3);
 	/* Calculo error actual */
 	ae_k=2*refaz-ay; // en unidades de encoder
+	if(abs(ae_k)<50) ae_k=0;
 	//e_k=ref*50.0/17.0*40.0*4.0-y;
 
 	/*if((e_k - e_km1)*(e_k - e_km1)<= 25)
 		e_k = 0;*/
 	habilitarAcimut++;
-	if(habilitarAcimut<1000){
+	if(habilitarAcimut<50){
 	    /*Termino Proporcional*/
 		aup = akp*ae_k;    
 	
@@ -83,15 +85,31 @@ static int markfin=0, i=0, c=0;
 		if(ud <= -50)
 			ud = -50;*/
 	
-		au_pid = aup + aui + aud;    
+		au_pid = aup/150 + aui/4 + aud*20;    
 		
-	 	/* Actualizar variables */
+		/* Actualizar variables */
 		aui_km1 = aui;
 		ae_km1 = ae_k;
 		
-		SetDutyPWM1(au_pid);
+		if(au_pid*au_pida>0) SetDutyPWM1(abs(au_pid));
+		else habilitarAcimut=50;
+
+		au_pida=au_pid;
+	}
 	else{
-		if(habilitarAcimut==3000) habilitarAcimut=0;
+ 		if(habilitarAcimut==200) habilitarAcimut=0;
+		if(habilitarAcimut==125){
+			if(au_pid>0) {
+				SetAzSpin(0);
+				au_pid=1;
+				aui=1;
+			}
+			else {
+				SetAzSpin(1);
+				au_pid=-1;
+				aui=-1;
+			}
+		}
 		else SetDutyPWM1(0);
 	}
 
@@ -126,7 +144,7 @@ static int markfin=0, i=0, c=0;
 		eui = -20;
 	
 	/*Termino Derivativo*/
-	eud = ekd*(ee_k-ee_km1)/Tm1/1000;
+	eud = ekd*(ee_k-ee_km1)/Tm1/100;
 	
 	/*if(ud >= 50)
 		ud = 50; 
@@ -134,7 +152,7 @@ static int markfin=0, i=0, c=0;
 	if(ud <= -50)
 		ud = -50;*/
 
-	eu_pid = eup + eui + eud;    
+	eu_pid = eup/500 + eui/4 + eud;    
 	
  	/* Actualizar variables */
 	eui_km1 = eui;
@@ -161,9 +179,11 @@ static int markfin=0, i=0, c=0;
 void LeerReferencia(){
 	puts_uart("p");
 	r=gets_uart(lecturaARM);
-	sscanf(lecturaARM, "%f, %f", (float*)&refelraw,(float*)&refazraw );
-	refaz=(long int)(refazraw*pulsosporvuelta*50.0/17.0/360.0);
-	refel=(long int)(refelraw*pulsosporvuelta*50.0/17.0/360.0);
+	sscanf(lecturaARM, "%f, %f", (float*)&refazraw,(float*)&refelraw );
+	refaz=(long int)refazraw;//(refazraw*pulsosporvuelta*50.0/17.0/360.0);
+	//refaz=20000;
+	refel=(long int)refelraw;//(refelraw*pulsosporvuelta*50.0/17.0/360.0);
+	//refel=120000;
 	sprintf(escrituraARM, "a %.1f %.0f %.0f %.0f e %.1f %.0f %.0f %.0f", refazraw, 2*refaz, ay, au_pid, refelraw, 2*refel, ey, eu_pid);
 	puts_uart(escrituraARM);
 	sprintf(lecturaARM, "");

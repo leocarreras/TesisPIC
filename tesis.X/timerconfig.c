@@ -6,7 +6,7 @@
 #include "qeiconfig.h"
 #include "uartconfig.h"
 
-
+/*
 #define akp 1//15//15//6
 #define aki 1
 #define akd 1000
@@ -14,6 +14,9 @@
 #define ekp 6//1//15//15//6
 #define eki 7
 #define ekd 3
+*/
+extern double akp, aki, akd, ekp, eki, ekd;
+
 
 #define finconteo 2500
 
@@ -51,7 +54,7 @@ static int markfin=0, i=0, c=0;
 	//puts_uart(str3);
 	/* Calculo error actual */
 	ae_k=2*refaz-ay; // en unidades de encoder
-	if(abs(ae_k)<50) ae_k=0;
+	//if(abs(ae_k)<50) ae_k=0;
 	//e_k=ref*50.0/17.0*40.0*4.0-y;
 
 	/*if((e_k - e_km1)*(e_k - e_km1)<= 25)
@@ -85,7 +88,7 @@ static int markfin=0, i=0, c=0;
 		if(ud <= -50)
 			ud = -50;*/
 	
-		au_pid = aup/150 + aui/4 + aud*20;    
+		au_pid = aup + aui + aud;    
 		
 		/* Actualizar variables */
 		aui_km1 = aui;
@@ -119,6 +122,13 @@ static int markfin=0, i=0, c=0;
 
 	/* Calculo error actual */
 	ee_k=2*refel-ey; // en unidades de encoder
+
+	if(ee_k >= 5000)
+		ee_k = 5000;
+
+	if(ee_k <= -5000)
+		ee_k = -5000;
+
 	//e_k=ref*50.0/17.0*40.0*4.0-y;
 
 	/*if((e_k - e_km1)*(e_k - e_km1)<= 25)
@@ -144,7 +154,7 @@ static int markfin=0, i=0, c=0;
 		eui = -20;
 	
 	/*Termino Derivativo*/
-	eud = ekd*(ee_k-ee_km1)/Tm1/100;
+	eud = ekd*(ee_k-ee_km1)/Tm1/1000;
 	
 	/*if(ud >= 50)
 		ud = 50; 
@@ -152,7 +162,7 @@ static int markfin=0, i=0, c=0;
 	if(ud <= -50)
 		ud = -50;*/
 
-	eu_pid = eup/500 + eui/4 + eud;    
+	eu_pid = eup + eui + eud;    
 	
  	/* Actualizar variables */
 	eui_km1 = eui;

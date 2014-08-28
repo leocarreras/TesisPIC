@@ -32,6 +32,9 @@ signed long pos_high1, pos_low1, pos_high2, pos_low2;
 
 unsigned int k=0;
 
+double akp=1/150.0, aki=1/4.0, akd=1000*20.0, ekp=6/500.0, eki=7/4.0, ekd=3*10.0; 
+char lecturaPID[70], escrituraPID[70];
+
 extern double referencia;
 
 
@@ -65,6 +68,17 @@ int main(int argc, char** argv) {
 	/* Initialize UART1 */
 	UART1Config();
 
+	/* Read PID values */
+	puts_uart("c");
+	gets_uart(lecturaPID);
+	sscanf(lecturaPID, "%f %f %f %f %f %f", (float*)&akp,(float*)&aki,(float*)&akd, (float*)&ekp,(float*)&eki,(float*)&ekd);
+	sprintf(escrituraPID, "%.3f %.3f %.3f %.3f %.3f %.3f", akp,aki,akd,ekp,eki,ekd);
+	puts_uart(escrituraPID);
+	
+	for(k=1;k<10;k++)
+		{
+		delay(200000);
+		}
 
 
 	/* Initialize Timer1 */

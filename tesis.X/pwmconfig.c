@@ -58,7 +58,7 @@ void InitMCindependentPWM()
 
 void SetDutyPWM1(double duty){
 	
-	if(duty>50) duty=50;
+	if(duty>90) duty=90;
 	if(duty<0) duty=0; 
 	P1DC1=periodo*((int)duty)/100;	
 }
@@ -74,13 +74,6 @@ void SetDutyPWM2(double duty){
 	P1DC2=periodo*((int)abs(duty))/100;	
 }
 
-/*void SetDutyPWM2(double duty){
-	
-	if(duty>50) duty=50;
-	if(duty<-50) duty=-50; 
-	
-	P1DC2=periodo*((int)duty+50)/100;	
-}*/
 
 void SetAzSpin(int spin){
 	if(spin==0){

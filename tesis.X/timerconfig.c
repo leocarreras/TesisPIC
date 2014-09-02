@@ -54,6 +54,13 @@ static int markfin=0, i=0, c=0;
 	//puts_uart(str3);
 	/* Calculo error actual */
 	ae_k=2*refaz-ay; // en unidades de encoder
+
+	if(ae_k >= 5000)
+		ae_k = 5000;
+
+	if(ae_k <= -5000)
+		ae_k = -5000;
+
 	//if(abs(ae_k)<50) ae_k=0;
 	//e_k=ref*50.0/17.0*40.0*4.0-y;
 
@@ -94,7 +101,7 @@ static int markfin=0, i=0, c=0;
 		aui_km1 = aui;
 		ae_km1 = ae_k;
 		
-		if(au_pid*au_pida>0) SetDutyPWM1(abs(au_pid));
+		if(au_pid*au_pida>=0) SetDutyPWM1(abs(au_pid));
 		else habilitarAcimut=50;
 
 		au_pida=au_pid;

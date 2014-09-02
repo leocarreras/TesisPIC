@@ -68,7 +68,7 @@ int main(int argc, char** argv) {
 	/* Initialize UART1 */
 	UART1Config();
 
-	/* Read PID values */
+	/* read pid values */
 	puts_uart("c");
 	gets_uart(lecturaPID);
 	sscanf(lecturaPID, "%f %f %f %f %f %f", (float*)&akp,(float*)&aki,(float*)&akd, (float*)&ekp,(float*)&eki,(float*)&ekd);
@@ -85,12 +85,18 @@ int main(int argc, char** argv) {
 	Timer1Config();
 	
 
-	
-// 	char test[50];
+//	SetDutyPWM1(0);
+// 	char testLeer[50], testEscribir[50];
+//	int testPWM, testRelay;
 //	char test[]="test";
     while(1){
-		//gets_uart(test);
-		//puts_uart(test);
+//		puts_uart("PWM Relay");
+//		gets_uart(testLeer);
+//		sscanf(testLeer, "%i %i", &testPWM, &testRelay);
+//		sprintf(testEscribir, "PWM Az: %i -- Relay: %i", testPWM,testRelay);
+//		puts_uart(testEscribir);
+//		SetDutyPWM1(testPWM);
+//		SetAzSpin(testRelay);
     }
 	return (EXIT_SUCCESS);
 }

@@ -14,11 +14,11 @@
 /*! \def A1    
 \brief Macro que define un pin de sentido de giro del motor de acimut        
 */
-#define A1 LATAbits.LATA0
+#define A1 LATAbits.LATA1
 /*! \def B1    
 \brief Macro que define un pin de sentido de giro del motor de acimut        
 */
-#define B1 LATAbits.LATA1
+#define B1 LATAbits.LATA0
 
 /*! \def A2    
 \brief Macro que define un pin de sentido de giro del motor de elevacion      
